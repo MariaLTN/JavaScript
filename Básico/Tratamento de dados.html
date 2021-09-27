@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de dados</title>
+    <style>
+        h3 {color:rgb(228, 226, 226);}
+        body {background-color: rgba(97, 61, 131, 0.719);}
+    </style>
+</head>
+<body> 
+    <h3>Olá, mundo!</h3>
+    <script>        
+        var Nome = window.prompt("Qual é o seu nome?") /*Caixa de Mensagem*/
+        window.alert("O seu nome é " + Nome + "!") //Concatenação;
+        document.write(`Seu nome é ${Nome.toUpperCase()} e tem ${Nome.length} letras.`)
+
+        var N1 = Number(window.prompt("Digite um número"));
+        var N2 = Number(window.prompt("Digite outro número"));
+        var Soma = N1 + N2
+        //window.alert("A soma é "+Soma.toFixed(2).replace('.',','));
+        window.alert("A soma é "+Soma.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) );
+        //O toFixed é para limitar as casas decimais.
+
+        /*
+        Converter de String para Números:
+        Number ou parseFloat ou parseInt
+        
+        Converter Número para Strings:
+        n.toString() ou String(n)
+        */
+
+        var Palavra = 'JavaScript';
+        window.alert(`Eu estou ${Nome} e estou aprendendo ${Palavra}`);
+        Templates Sttring (PlaceHolder);
+
+
+
+   </script>
+</body>
+</html>
