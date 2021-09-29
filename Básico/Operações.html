@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores</title>
+    <style>
+        h3 {color:rgb(228, 226, 226);}
+        body {background-color: rgba(97, 61, 131, 0.719);}
+    </style>
+</head>
+<body> 
+    <h3>Olá, mundo!</h3>
+    <script>
+        //Artiméticos:
+        window.alert("Operadores Artiméticos");
+        var N1 = Number(5);
+        var N2 = Number(2);
+        window.alert("5 + 2 = " + (N1+N2));
+        window.alert("5 - 2 = " + (N1-N2));
+        window.alert("5 * 2 = " + (N1*N2));
+        window.alert("5 / 2 = " + (N1/N2));
+        window.alert("5 % 2 = " + (N1%N2));
+        window.alert("5 ** 2 = " + (N1**N2));
+        //ORDEM DE PRECEDENCIA: () -> ** -> * ou / ou % -> + ou -
+
+        //Atribuição:
+        window.alert("Incremento");
+        var N1 = Number(10);
+
+        window.alert("X = " + N1);
+        var N1 = ++N1;        
+        window.alert("++X= " + N1);
+
+        //Relacionais:
+        var N1 = Number(5);
+        var N2 = Number(2);
+        var N5 = String(5);
+        window.alert("5 > 2 -> " + (N1>N2));
+        window.alert("5 < 2 -> " + (N1<N2));
+        window.alert("5 >= 2 -> " + (N1>=N2));
+        window.alert("5 <= 2 -> " + (N1<=N2));
+        window.alert("5 == 2 -> " + (N1==N2));
+        window.alert("5 != 2 -> " + (N1!=N2));
+        window.alert("Relacionais de Identidade (==)");
+        window.alert("5 == '5' -> " + (N1==N5));
+        window.alert("Relacionais de Identidade Restrita (===)");
+        window.alert("5 == '5' -> " + (N1===N5));
+        window.alert("Relacionais de Desigualdade Restrita (===)");
+        window.alert("5 !== '5' -> " + (N1!==N5));
+        window.alert("Relacionais de Desigualdade Restrita (===)");
+        window.alert("5 !== 5 -> " + (N1!==N1));
+
+        //Lógicos:
+        window.alert("!-Negação; &&-Conjunção(AND); ||-Disjunção(OR)");
+        window.alert("true && false -> " + (true&&false));
+        window.alert("!false-> " + (!false));
+        window.alert("true || false -> " + (true||false));
+        //ORDEM DE PRECEDENCIA: ARITMETICOS -> RELACIONAIS -> LÓGICOS (1º !; 2º &&; 3º ||)
+
+       //Ternários:
+       window.alert("teste ? true: false ");
+       var media = Number(80);
+       window.alert("(Média>=70) ? 'Aprovado': 'Reprovado'");
+       window.alert("Resultado: " + (media>=70)?'Aprovado':'Reprovado');
+  
+   </script>
+</body>
+</html>
