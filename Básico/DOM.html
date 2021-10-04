@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {background-color: rgba(255, 255, 255, 0.719);}
+        div#AreaUm{
+            background-color: rgb(255, 189, 148);
+            width:150px;
+            height: 150px;
+            text-align: center;
+            font: bolder 15px Arial;
+        }
+        div#AreaDois{
+            background-color: rgb(19, 189, 148);
+            width:150px;
+            height: 150px;
+            text-align: center;
+            font: bolder 15px Arial;
+        }
+    </style>
+</head>
+<body> 
+    <h3>Primeira Parte (Introdução)!</h3>
+        <p>(Parágrafo 1 - Index 0)</p>
+        <p>(Parágrafo 2 - Index 1) Aprendendo a usar o <strong>DOM (DOCUMENT OBJECT MODEL)</strong> em JS</p>
+        <div class="Classe">(Div 1)</div>
+        <div Id="ID">(Div 2)</div><br>        
+        
+        <script>
+            var Paragrafo01 = document.getElementsByTagName('p')[1]
+            window.document.write("Conteúdo: "+Paragrafo01.innerText)
+            //O innerText mostra sem a formatação com o "strong".
+            //Para mostrar na versão "completa" seria necessário usar o innerHTML.
+            Paragrafo01.style.color = 'pink'
+
+            var Variavel_ID = document.querySelector('div#ID')
+            var Variavel_Classe = document.querySelector('div.Classe')
+            //(div.NomeDaClasse) ou (div#NomeDoID)
+            Variavel_Classe.style.color = 'purple'
+            Variavel_ID.style.background = 'yellow'
+
+        </script><br>
+
+    <!-- Evento é tudo aquilo que possa acontecer. Exemplo um evento de mouse(mouseenter,moousemove, mousedown, mouseup, clik, mouseout) -->
+
+
+    <h3>Segunda Parte (Eventos)</h3>
+        <div id="AreaUm" onclick="clicarUm()" onmouseout="sairUm()">
+            Interaja Primeira Forma...
+        </div>
+        <!--Existem duas formas de interagir com esse div--->
+        <!--A primeira forma-->
+        <script>
+            var AreaUm = window.document.getElementById('AreaUm');
+            function clicarUm(){                
+                AreaUm.innerText = 'Clicou!'
+                AreaUm.style.background = 'red'
+            }
+            function sairUm(){                
+                AreaUm.innerText = 'Saiu!'
+                AreaUm.style.background = 'rgb(255, 189, 148)'
+            }
+        </script><br>
+
+        <div id="AreaDois">
+            Interaja Segunda Forma...
+        </div>
+        <!--A Segunda forma-->
+        <script>
+            var AreaDois = window.document.getElementById('AreaDois');
+            AreaDois.addEventListener("click", clicarDois);
+            AreaDois.addEventListener("mouseout", sairDois);
+
+            function clicarDois(){                
+                AreaDois.innerText = 'Clicou!'
+                AreaDois.style.background = 'red'
+            }
+            function sairDois(){                
+                AreaDois.innerText = 'Saiu!'
+                AreaDois.style.background = 'rgb(19, 189, 148)'
+            }
+        </script>
+
+
+    
+</body>
+</html>
