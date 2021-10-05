@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Condições</title>
+    </head>
+    <body>
+        <h3>Testes com condições</h3>
+        Velocidade de um veículo: <input type="number" min="0" max="300" id="velocidade"> Km/h.
+        <input type="button" value="verificar" onclick="calcular()">
+        <p id="res"></p>
+        <script>
+        function calcular() {
+            var VV = window.document.getElementById('velocidade');
+            var V = Number(VV.value);
+                if (V>60) {
+                    res.innerHTML = 'MULTADO';
+                } else {
+                    res.innerHTML = 'NÃO FOI MULTADO';
+                }
+            }
+        </script>
+
+        Digite um pais: <input type="text" id="pais">
+        <input type="button" value="verificar" onclick="verificar()">
+        <p id="resu"></p>        
+        <script>
+        function verificar() {
+            var VF = window.document.getElementById('pais');
+            if (VF.value.toUpperCase() != "BRASIL") {
+                    resu.innerHTML = 'ESTRANGEIRO';
+                } else {
+                    resu.innerHTML = 'BRASILEIRO';
+                }
+            }            
+        </script>
+
+        Digite um valor de 1 a 2: <input type="number" id="numero" min="1" max="2">
+        <input type="button" value="verificar" onclick="numerais()">
+        <p id="resul"></p>        
+        <script>
+        function numerais() {
+            var X = window.document.getElementById('numero');
+            switch(X.value) {
+                case '1':
+                    resul.innerHTML = 'Você escolher o número 1';
+                    break;
+                case '2':
+                    resul.innerHTML = 'Você escolher o número 2';
+                    break;
+            }            
+        }                       
+        </script> 
+    </body>
+</html>
