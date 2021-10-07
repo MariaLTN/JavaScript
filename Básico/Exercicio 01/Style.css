@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #0b1337ce;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 10px;
+  margin: 30px 30px;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  font-size: 10px;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+section {
+  border-radius: 15px;
+  background-color: white;
+  text-align: center;
+  margin: auto;
+  width: 500px;
+  height: 450px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+}
+
+#Img {
+  margin-top: 50px;
+  width: 250px;
+}
+
+#Texto {
+  margin-top: 30px;
+}
