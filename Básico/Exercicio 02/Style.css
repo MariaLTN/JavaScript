@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #796465;
+  background-color: #d7b29d;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 10px;
+  margin: 30px 30px;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  font-size: 10px;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+section {
+  border-radius: 15px;
+  background-color: white;
+  text-align: center;
+  margin: auto;
+  width: 500px;
+  height: 450px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+}
+
+#Texto {
+  margin-top: 30px;
+}
+
+p > input {
+  border-radius: 5px;
+  border: 1px solid #dde8b9;
+  width: 200px;
+  margin-top: 30px;
+  height: 20px;
+}
+
+div#T {
+  margin-top: 30px;
+  color: #cb8589;
+}
