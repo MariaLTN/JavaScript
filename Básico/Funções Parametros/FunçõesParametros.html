@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+  	<title>JavaScript</title>
+    <meta charset="utf-8">  
+    <script src="meu_script.js"></script> 
+  </head> 
+  <body>
+    <h3>Flexibilidade dos Parametros</h3>
+    <p>function soma (a,b){<br>return a+b; <br> }</p>
+    <p>Nesse caso, é esperado que passemos dois parametros para a função soma.</p> 
+    <p>Se usarmos a função: soma(7,7) ele retornará o número 14. O previsto.  </p>
+    <p>Mas caso passemos mais parametros: soma(7,7,2,3). Ele retornará apenas o 14 e <strong>descartará</strong> os outros dois números (2,3)</p>
+    <p>Mas caso passemos parametros a menos: soma(7). Ele interpretará: <strong>7 + undefined = not a number (NaN)</strong></p>
+    <p>E caso não passemos nenhum valor: soma() ele retorna um Not a Number(NaN)</p>
+
+    <strong>Observar pelo console.</strong>
+  </body>
+</html>
