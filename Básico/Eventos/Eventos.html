@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript</title>
+    <meta charset="utf-8">
+</head>
+<body> <!-- onresize="Resize()" onscroll="Scroll()" -->
+    <h3>Eventos - Mouse</h3>
+    <div style="background:#E8C8CB; height: 100px; width: 100px;" onclick="Clicar()"></div><hr>
+    <div style="background:#F2D2CB; height: 100px; width: 100px;" ondblclick="DBL()"></div><hr>
+    <div style="background:#F2DFCB; height: 100px; width: 100px;" onmouseover="OVER()"></div><hr>
+    <div style="background:#8C1C36; height: 100px; width: 100px;" onmouseout="OUT()"></div><hr>
+    <p><strong>Esses eventos podem ser usados juntos.</strong></p>
+    <div style="background:#202B33; height: 100px; width: 100px;" onmouseover="OVER()" onmouseout="OUT()" ></div><hr>
+
+    <h3>Eventos - Teclado</h3>
+    <p><strong>Observação: </strong>Em muitos casos será necessário o uso de <strong>máscaras</strong> de formatação de campos como por exemplo, máscara de telefone, CPF, RG, CEP, CNPJ... Enfim, nesses casos, precisamos verificar o caracter importado antes mesmo dele ser exibido, para ver se ele é compatível com a máscara que queremos implementar. Logo, para fazer um tratamento em relação ao caracter recém coletado, precisaremos utilizar o "onkeydown", porque dessa forma poderemos tratar esse caracter antes dele ser exibido.</p>
+    <p>Ou seja, se eu digitar "A" o campo que nós temos uma máscara de telefone antes da exibição do "A", podemos saber se é ou não um número. E então, decidir se deve ou não ser exibido. Com o "onkeyup" não seria possível, pois ele exibe antes da execução da função mostrada. Assim, essa diferença embora sutil deve ser compreendida.</p>
+
+    <input type="text" onkeydown="Down()" placeholder="Down">
+    <p>Após a execução da função a tecla aparece no input do "Down"</p><hr>
+
+    <input type="text" onkeyup="Up()" placeholder="Up">
+    <p>O aparecimento do dado ocorre antes da execução da função em "Up"</p><hr>
+
+    <input type="text" onkeypress="Press()" placeholder="Press">
+    <p>O "onkeypress" só funciona quando a tecla pressionada é um caractere, se for por exemplo um 'ALT' ele não funciona." Segundo a explicação da máscara, podemos ver que a exibição do conteúdo da tecla só é apresentado depois da função (alert)</p><hr>
+
+    <h3>Eventos - Janela</h3>
+    <p>É um evento que acontece no <strong>body</strong>.</p>
+    <p>Para visualizar o "onresize" basta (colocar o evento do body e) aumentar ou diminir o tamanho de tela e para visualizar o "onscroll" basta (colocar o evento do body e) "rolar" a barra de navegação. Assim como o "onkeypress" ele primeiro executa a função depois mostra o resultado do novo tamanho da tela.</p><hr>
+    
+    <h3>Eventos - Formulário</h3>
+    <p>O "onfocus" é acionado quando o elemento recebe o foco do cursor do mouse, ou seja, quando clicamos sobre um elemento (Aplicando o foco). O "onblur" ocorre o contrário, quando vamos para um elemento diferente do atual. E o "onchange" é acionado quando o estado do elemento é modificado. (Comum para elementos do tipo select)</p>
+
+    <input type="text" onfocus="console.log('Focus está acontecendo')" onblur="console.log('Blur está acontecendo')"><br><br>
+
+    <select onchange="console.log('Change está acontecendo')">
+    	<option>Selecione</option>
+    	<option value="1">1</option>
+    	<option value="2">2</option>
+    </select>
+
+    <p><strong>Para visualizar, vá em Inspecionar -> Console</strong></p>
+    
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
