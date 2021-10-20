@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>JavaScript</title>
+	    <meta charset="utf-8">
+
+	    <style type="text/css">
+	    <style>
+	    	.Estilo_1 {border: 2px solid green; height: 100px;}
+	    	.Estilo_2 {border: 2px solid red; height: 100px;}
+	    </style>
+	</head>
+	<body> 
+		<h3>DOM</h3>
+		<p>O <strong>Document Object Model - DOM</strong> é uma API multiplataforma que permite o acesso através do JavaScript a todos os elementos HTML que fazem parte da nossa página.</p>
+		<p>A organização do documento sergue uma representação de uma árvore (Árvore binária), no qual visa estabelecer trajetos específicos para alcançar cada um dos elementos que constituem a página.</p><hr>
+
+		<h4>Exemplo 01</h4>
+
+		<p>input type="text" name="nome" placeholder="Digite o seu nome" id="nome" class="campo_texto"
+		</p>
+		
+		<input 
+			type="text" 
+			name="nome" 
+			placeholder="Digite o seu nome" 
+			id="nome_usuario" 
+			class="campo_texto"
+		>
+    
+	    <script>
+	    	document.write("<br><br>");
+			document.write("getElementById = " + document.getElementById('nome_usuario'));
+			document.write("<br>");
+			document.write("getElementsByTagName = " + document.getElementsByTagName('input'));
+			document.write("<br>");
+			document.write("getElementsByClassName = " + document.getElementsByClassName('campo_texto'));
+			document.write("<br>");
+			document.write("getElementsByName = " + document.getElementsByName('nome'));
+
+			//Console
+
+			console.log(document.getElementById('nome_usuario'));
+			console.log(document.getElementsByTagName('input'));
+			console.log(document.getElementsByClassName('campo_texto'));
+			console.log(document.getElementsByName('nome'));
+	    </script><hr>
+
+	    <h4>Exemplo 02 - Separar letras e números</h4>
+
+	    <input type="text" id="Key" placeholder="Digite algo" onkeyup="Decisao()"><br><br>
+
+	    <span>Letras:</span><br>
+	    <input type="text" id="Letras" disabled="disabled"><br>
+
+	    <span>Números</span><br>
+		<input type="text" id="Numeros" disabled="disabled">
+
+		<script type="text/javascript" src="main.js"></script>
+
+		<h4>Exemplo 03 - Manipular estilos</h4>
+
+		<button type="button" onclick="Cor_Fundo('#FF0000')">Vermelho</button>
+		<button type="button" onclick="Cor_Fundo('#00FF00')">Verde</button>
+		<button type="button" onclick="Cor_Fundo('#0000FF')">Azul</button>
+		<br><br>
+
+		<div id="Square" style="height: 150px; width: 150px; border: 1px solid black; background-color: gray;"></div>
+
+		<script type="text/javascript" src="main.js"></script>
+		<hr>
+
+		<h4>Exemplo 04 - Manipular classes de elementos</h4>
+		
+
+		<div id="Mensagem" class="Estilo_2">Modificando a classes.</div>
+		<br><br>
+		<button type="button" onclick="Modifica_Classe()">Aperte</button>
+
+		<script>
+			function Modifica_Classe(){
+				document.getElementById('Mensagem').className = 'Estilo_1';				
+			}			
+		</script>
+
+		<!--Esse último não está funcionando corretamente.-->		
+
+
+
+	</body>
+</html>
