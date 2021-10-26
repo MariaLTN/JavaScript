@@ -39,11 +39,15 @@ function analisadorLista(){
 
         var Soma=0, Menor, Maior, Tamanho;
 
-        for (let pos in Lista) {
+       for (let pos in Lista) {
             if (Lista[pos]%2==0) {
-                listaPar.push(Lista[pos]);
+                if (NotinList(Number(Lista[pos]), listaPar)) {
+                    listaPar.push(Lista[pos]);
+                }                
             } else {
-                listaImpar.push(Lista[pos]);
+                if (NotinList(Number(Lista[pos]), listaImpar)) {
+                    listaImpar.push(Lista[pos]);
+                } 
             } Soma += Lista[pos];
         }
         
