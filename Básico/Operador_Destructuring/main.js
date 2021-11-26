@@ -1,8 +1,11 @@
 document.write(`<h3>Operador Destructuring</h3>`);
 document.write(`Um operador de desestruturação, ele tira valores de dentro de uma estrutura. Essa estrutura pode ser um array ou um objeto.`);
 
-// Contexto Array
-document.write(`<p>Contexto Array</p>`);
+
+///////////////// PARTE 01
+
+///////////////// Contexto Array:
+document.write(`<h4>Contexto Array</h4>`);
 let ArrayFrutas = ["Abacaxi", "Perâ", "Maçã"];
 document.write(`<p>let ArrayFrutas = ["Abacaxi", "Perâ", "Maçã"];</p>`)
 
@@ -54,13 +57,58 @@ document.write(`<p>let [,[,n2]] =  Coisas; --> Maria</p>`)
 let [[,n3]] = Coisas;
 console.log(n3); // Perâ
 
-/*
+///////////////// PARTE 02
+document.write(`<h4>Contexto Objetos</h4>`);
 
+///////////////// Contexto Objetos:
+let Produto = {
+    nome: "Notebook",
+    preco: 2500,
+    detalhes: {
+        fabricante: "ABC",
+        modelo: "XYZ"
+    }
+    // Com "detalhes" temos atributos de objetos a tributos de outros objetos.
+    // Nada mais que uma COMPOSIÇÃO: (Sendo esse um TEM UM) também existe o "É UM"
+}
+document.write(`<p>let Produto = {<br> nome: "Notebook",<br>preco: 2500,<br> detalhes:<br>fabricante: "ABC",<br>modelo:"XYZ"<BR>}</p>`)
+
+
+// Extrair do objeto "nome" e "preco"
+//  Obs.: Cuidado para não confundir com a iniciação de um objeto literal.
+let {nome, preco} = Produto
+console.log(nome, preco)
+document.write(`<p>let {nome, preco} = Produto  --> Notebook 2500 </p>`)
+
+// O TOKEN do descructuring varia, com o ARRAY tivemos o [] e agora temos o {}.
+
+// Mudar nomes de variáveis:
+let {nome: n, preco: p} = Produto
+console.log(n, p)
+document.write(`<p>let {nome: n, preco: p} = Produto  --> Notebook 2500 </p>`)
+
+// Quando um atributo não existe no escope previsto ele retorna "Undefined"
+let {nome: nn, preco: pp, desconto} = Produto
+console.log(nn, pp, desconto)
+document.write(`<p>let {nome: n, preco: p, desconto} = Produto  --> Notebook 2500 undefined</p>`)
+
+
+// Podemos ainda usar valores default (semelhante ao que foi feito em Arrays):
+let {nome: nome1, preco: preco1, desconto1="Não foi dado desconto"} = Produto
+console.log(nome1, preco1, desconto1)
+document.write(`<p>let {nome: nome1, preco: preco1, deconto1="Não foi dado desconto"} = Produto  --> Notebook 2500 "Não foi dado desconto"</p>`)
+
+// Podemos ainda extrair dados de objetos pertencente a outros objetos (Dados dentro do "detalhes"):
+let {detalhes: {fabricante, modelo}} = Produto
+console.log(fabricante, modelo)
+document.write(`<p>let {detalhes: {fabricante, modelo}} = Produto --> ABC XYZ</p>`)
+
+// Os mesmos comportamentos a cima de: mudar o nome da variável, colocar dados default e outros servem para estes dados também;
+
+
+/*document.write(`<p>.</p>`)
 document.write(`<p>.</p>`)
 
-
-document.write(`<p>.</p>`)
-document.write(`<p>.</p>`)
 document.write(`<p>.</p>`)
 document.write(`<p>.</p>`)
 document.write(`<p>.</p>`)
