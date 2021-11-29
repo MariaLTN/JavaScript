@@ -105,6 +105,93 @@ document.write(`<p>let {detalhes: {fabricante, modelo}} = Produto --> ABC XYZ</p
 
 // Os mesmos comportamentos a cima de: mudar o nome da variável, colocar dados default e outros servem para estes dados também;
 
+///////////////// PARTE 03
+document.write(`<h4>Continuando no contexto Array e  Objetos</h4>`);
+
+///////////////// Continuando no contexto Array:
+
+document.write(`Forma comum: <p>let arr = [10, 20, 30, 40];</p>`)
+document.write(`<p>function teste(a, b){
+    console.log(a,b)
+}</p>`)
+document.write(`<p>teste(arr[0], arr[1]) -> 10, 20</p>`)
+
+let arr = [10, 20, 30, 40];
+function teste(a, b){
+    console.log(a,b)
+}
+teste(arr[0], arr[1]);
+
+document.write(`<br><p>Usando o modelo Destructuring:</p>`)
+
+let arr1 = [10, 20, 30, 40];
+function teste1([c, d]){
+    console.log(c,d)
+}
+teste1(arr1);
+
+document.write(`<p>function teste([c, d]){
+    console.log(c,d)
+}</p>`)
+
+document.write(`<p>teste(arr) -> 10, 20</p>`)
+
+///////////////// Continuando no contexto Objeto:
+
+let obj = {
+    a: 100,
+    b: 200,
+    c: 300,
+    d: 400
+}
+
+function teste2(a, b){
+    console.log(a, b)
+}
+teste2(obj.a, obj.b)
+
+document.write(`<br>Forma comum: <p>let obj = {
+    a: 100,
+    b: 200,
+    c: 300,
+    d: 400
+}</p>`)
+document.write(`<p>function teste2(a, b){
+    console.log(a, b)
+}</p>`)
+
+document.write(`<p>teste2(obj.a, obj.b) -> 100, 200
+</p>`)
+
+document.write(`<br><p>Usando o modelo Destructuring:</p>`)
+
+let obj1 = {
+    a: 100,
+    b: 200,
+    c: 300,
+    d: 400
+}
+
+function teste3({a, b}){
+    console.log(a, b)
+}
+teste3(obj1)
+
+
+document.write(`<p>let obj = {
+    a: 100,
+    b: 200,
+    c: 300,
+    d: 400
+}</p>`)
+document.write(`<p>function teste3({a, b}){
+    console.log(a, b)
+}</p>`)
+
+document.write(`<p>teste3(obj) -> 100, 200</p>`)
+
+document.write(`<p><strong>Ainda podemos "pular" variáveis, renomeá-las, usar o default e outros...</strong></p>`)
+
 
 /*document.write(`<p>.</p>`)
 document.write(`<p>.</p>`)
