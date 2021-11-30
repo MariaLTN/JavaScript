@@ -192,13 +192,39 @@ document.write(`<p>teste3(obj) -> 100, 200</p>`)
 
 document.write(`<p><strong>Ainda podemos "pular" variáveis, renomeá-las, usar o default e outros...</strong></p>`)
 
+///////////////// PARTE 04
+document.write(`<BR><h4>Usando o destructuring com o REST</h4>`);
 
-/*document.write(`<p>.</p>`)
-document.write(`<p>.</p>`)
+let Array = [1,2,3,4,5];
+document.write(`<p>let Array = [1,2,3,4,5];</p>`)
 
-document.write(`<p>.</p>`)
-document.write(`<p>.</p>`)
-document.write(`<p>.</p>`)
-document.write(`<p>.</p>`)
-document.write(`<p>.</p>`)
-*/
+let [PrimeiroElemento, ...RestoElementos] = Array
+document.write(`<p>let [PrimeiroElemento, ...RestoElementos] = Array</p>`)
+
+console.log(PrimeiroElemento, RestoElementos)
+document.write(`<p>console.log(PrimeiroElemento, RestoElementos) --> 1 [2,3,4,5]</p>`)
+document.write(`<p>Estamos escolhendo um elementos e agrupando o resto. A mesma coisa pode ser feita com ojetos:</p>`)
+
+let Objeto1 = {
+    a_Objeto1: 6,
+    b_Objeto1: 7,
+    c_Objeto1: 8,
+    d_Objeto1: 9,
+    Objeto1: 10
+}
+document.write(`<p>let Objeto1 = {
+    a_Objeto1: 6,
+    b_Objeto1: 7,
+    c_Objeto1: 8,
+    d_Objeto1: 9,
+    Objeto1: 10
+}</p>`)
+
+
+let {a_Objeto1, ...RestoElementos_Objeto1} = Objeto1
+document.write(`<p>let {a_Objeto1, ...RestoElementos_Objeto1} = Objeto1
+</p>`)
+
+console.log(a_Objeto1, RestoElementos_Objeto1)
+document.write(`<p>console.log(a_Objeto1, RestoElementos_Objeto1) 
+--> 6 {b_Objeto1: 7, c_Objeto1: 8, d_Objeto1: 9, Objeto1: 10}</p>`)
