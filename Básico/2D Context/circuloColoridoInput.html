@@ -1,0 +1,50 @@
+<title>Desenhando Circulos Coloridos</title>
+<meta charset="UTF-8">
+
+Escolha uma cor <input type="color"><br>
+<canvas width="600" height="400"></canvas>
+
+
+<script> 
+
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");   
+    var paletaCores =  document.querySelector("input");
+
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0, 600, 400);
+        
+    var desenhaMouse = false;
+
+    function exibeCirculos(evento) {
+        
+        if (desenhaMouse) {
+            var x = evento.pageX - tela.offsetLeft; //Ajustar as coordenadas;
+            var y = evento.pageY - tela.offsetTop; //Ajustar as coordenadas; 
+            pincel.fillStyle = paletaCores.value;
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 3.14*2);
+            pincel.fill();       
+        }
+    }   
+
+   tela.onmousemove = exibeCirculos;
+
+    function habilitaDesenhar() {
+
+        desenhaMouse = true;
+    }
+
+    function desabilitaDesenhar() {
+
+        desenhaMouse = false;
+    }
+
+    tela.onmousedown = habilitaDesenhar;
+
+    tela.onmouseup = desabilitaDesenhar;
+    
+    alert(corEscolhida);
+    
+</script>
+
