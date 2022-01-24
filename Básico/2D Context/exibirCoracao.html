@@ -1,0 +1,55 @@
+<meta charset="UTF-8">
+
+<h3>Clique na tela em cinza, para mudar a cor clique com o botão direto do mouse.</h3>
+
+<canvas width="600" height="400"></canvas>
+
+
+<script> 
+
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+    
+    
+
+    var coresDisponiveis = ['blue', 'red', 'green'];
+    var indiceCor = 0;
+
+    pincel.fillStyle = "gray";
+    pincel.fillRect(0,0, 600, 400);
+
+    function mudaCor(){
+        indiceCor++
+        if (indiceCor >= coresDisponiveis.length) {
+            indiceCor = 0;
+        }
+        return false;        
+    }
+
+    tela.oncontextmenu = mudaCor;
+
+    function exibeCoracao(evento) {
+
+        var x = evento.pageX - tela.offsetLeft; //Ajustar as coordenadas;
+        var y = evento.pageY - tela.offsetTop; //Ajustar as coordenadas;
+
+        var raioNormal = 5;
+
+        pincel.fillStyle = coresDisponiveis[indiceCor];
+        pincel.beginPath();
+        pincel.arc(x, y, raioNormal, 0, 3.14*2);
+        pincel.arc(x+10, y, raioNormal, 0, 3.14*2);
+        pincel.fill();
+
+        //pincel.fillStyle = "red";
+        pincel.beginPath();
+        pincel.moveTo(x+5, y+15);
+        pincel.lineTo(x-5, y);
+        pincel.lineTo(x+15, y);
+        pincel.fill();
+    }
+
+    tela.onclick = exibeCoracao;
+    
+</script>
+
